@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/Request_Response.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>logs/Request_Response%i.log</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>21</maxIndex><!--max allowed is 21-->
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>70MB</maxFileSize>
+		</triggeringPolicy>
+		<append>false</append>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%-5level] %logger{15} - %msg%n%rEx</pattern>
+		</encoder>
+		<immediateFlush>false</immediateFlush>
+	</appender>
+
+
+	<logger name="io.gatling.http.ahc" level="TRACE" />
+	<logger name="io.gatling.http.response" level="TRACE"/>
+	<logger name="io.gatling.http.engine.response" level="TRACE" />
+
+	<root level="INFO">
+		<appender-ref ref="FILE" />
+	</root>
+
+</configuration>
+
