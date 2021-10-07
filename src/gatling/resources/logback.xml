@@ -2,7 +2,7 @@
 <configuration>
 
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>logs/Request_Response.log</file>
+		<file>build/logs/Request_Response.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
 			<fileNamePattern>logs/Request_Response%i.log</fileNamePattern>
 			<minIndex>1</minIndex>

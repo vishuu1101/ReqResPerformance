@@ -18,7 +18,6 @@ object Scenarios {
       .check(bodyString.saveAs("ResponseBody"))
     ).exec(session => {
     val response = session("ResponseBody").as[String]
-    println(s"Response body: $response")
     session
   })
 
@@ -31,7 +30,6 @@ object Scenarios {
       .check(bodyString.saveAs("ResponseBody"))
     )).exec(session => {
     val response = session("ResponseBody").as[String]
-    println(s"Response body: $response")
     session
   })
 }
